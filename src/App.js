@@ -51,33 +51,33 @@ const App = () => {
   const [email, setEmail] = useState('');
 
   useEffect(() => {
-    setAuthToken(window.localStorage.getItem('authToken'));
-    setAuthTokenType(window.localStorage.getItem('authTokenType'));
-    setUsername(window.localStorage.getItem('username'));
-    setUserId(window.localStorage.getItem('userId'));
-    setUserType(window.localStorage.getItem('userType'));
+    setAuthToken(localStorage.getItem('authToken'));
+    setAuthTokenType(localStorage.getItem('authTokenType'));
+    setUsername(localStorage.getItem('username'));
+    setUserId(localStorage.getItem('userId'));
+    setUserType(localStorage.getItem('userType'));
   }, []);
 
   useEffect(() => {
     authToken
-      ? window.localStorage.setItem('authToken', authToken)
-      : window.localStorage.removeItem('authToken');
+      ? localStorage.setItem('authToken', authToken)
+      : localStorage.removeItem('authToken');
 
     authTokenType
-      ? window.localStorage.setItem('authTokenType', authTokenType)
-      : window.localStorage.removeItem('authTokenType');
+      ? localStorage.setItem('authTokenType', authTokenType)
+      : localStorage.removeItem('authTokenType');
 
     userId
-      ? window.localStorage.setItem('userId', userId)
-      : window.localStorage.removeItem('userId');
+      ? localStorage.setItem('userId', userId)
+      : localStorage.removeItem('userId');
 
     username
-      ? window.localStorage.setItem('username', username)
-      : window.localStorage.removeItem('username');
+      ? localStorage.setItem('username', username)
+      : localStorage.removeItem('username');
 
     userType
-      ? window.localStorage.setItem('userTye', userType)
-      : window.localStorage.removeItem('userType');
+      ? localStorage.setItem('userTye', userType)
+      : localStorage.removeItem('userType');
   }, [authToken, authTokenType, userId, userType, username]);
 
   useEffect(() => {
